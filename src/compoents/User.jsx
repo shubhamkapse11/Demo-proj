@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 function User() {
   const [users, setUsers] = useState([]);
 
+ 
+  
   useEffect(() => {
     async function fetchUsers() {
       const response = await fetch(
@@ -22,10 +24,12 @@ function User() {
 
     <>
 
-     { users.length < 0 ? <div>Loading...</div> : <div>
+     { 
+     users.length < 0 ? <div>Loading...</div> : <div>
         {users.map(user => (
             <p key={user.id}>{user.name}</p>
         ))}
+
      </div> }
     </>
   );
